@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Horses</title>
+</head>
+<body>
+    <%- include("partials/_navbar") %>
+    <h1>List of Horses</h1>
+    <ul>
+        <% horses.forEach(horse => { %>
+            <li><a href="/horses/<%= horse._id %>"><%= horse.name %></a></li>
+        <% }) %>
+    </ul>
+    
+</body>
+</html>
