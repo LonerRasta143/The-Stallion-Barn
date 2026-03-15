@@ -44,9 +44,11 @@ app.get("/", (req, res) => {
         user: req.session.userId || null
 });
 });
-app.use("/", authRoutes);
+
 app.use("/horses", horseRoutes);
 app.use("/users", userRoutes);
+app.use("/users", authRoutes);
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
