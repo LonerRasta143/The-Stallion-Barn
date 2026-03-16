@@ -1,6 +1,13 @@
 {
+  "name": "the-stallion-barn",
+  "version": "1.0.0",
+  "description": "Equine management and health tracking application",
+  "main": "App/server.js",
+"scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+},
   "dependencies": {
-    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^6.0.0",

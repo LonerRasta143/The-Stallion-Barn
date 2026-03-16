@@ -51,7 +51,7 @@ router.post("/sign-in", async (req, res) => {
        if (isMatch) {
         req.session.userId = foundUser._id;
         req.flash("success", "Login successful!");
-        res.redirect("/");
+        res.redirect("/horses");
        } else {
         req.flash("error", "Invalid email or password.");
         res.redirect("/users/sign-in");
@@ -63,4 +63,31 @@ router.post("/sign-in", async (req, res) => {
     }
 });
 
+// Handle logout
+router.get("/sign-out", isUserAuth, (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error(err);
+            req.flash("error", "An error occurred while logging out. Please try again.");
+            return res.redirect("/horses");
+        }
+        res.clearCookie("connect.sid");
+        req.flash("success", "You have been logged out.");
+        res.redirect("/users/sign-in");
+    });
+});
+
+// Show user profile
+router.get("/profile", isUserAuth, async (req, res) => {
+    try {
+        const user = await User.findById(req.session.userId);
+        res.render("profile", { user });
+    } catch (err) {
+        console.error(err);
+        req.flash("error", "An error occurred. Please try again.");
+        res.redirect("/horses");
+    }
+});
+
+//
     module.exports = router;

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horse Profile</title>
+</head>
+<body>
+        <%- include("partials/_navbar") %>
+    <h1><%= horse.name %></h1>
+    <p>Breed: <%= horse.breed %></p>
+    <p>Age: <%= horse.age %></p>
+    <% if (horse.image) { %>
+        <img src="<%= horse.image %>" alt="<%= horse.name %>">
+    <% } %>
+    <br>
+    <br>
+    <a id="horsebutt" href="/horses">Back to Horse List</a>
+    <br>
+    <br>
+    <a id="editbutt" href="/horses/<%= horse._id %>/edit">Edit Horse</a>
+</body>
+</html>

@@ -13,6 +13,20 @@
             <li><a href="/horses/<%= horse._id %>"><%= horse.name %></a></li>
         <% }) %>
     </ul>
-    
+    <form action ="/horses" method="POST">
+        <label for="name">Horse Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" name="breed" required>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <br>
+        <label for="image">Image URL: </label>
+        <input type="text" name="image" id="image" placeholder="https://ecample.com/horsepicture.jpg">
+        <br>
+        <button type="submit">Add Horse</button>
+    </form>
 </body>
 </html>

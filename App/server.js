@@ -26,7 +26,6 @@ app.use (methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(helmet());
 app.use(cors());
-app.use(flash());
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -34,7 +33,7 @@ app.use(session({
     store: MongoStore.create({
          mongoUrl: process.env.MONGODB_URI })
 }));
-
+app.use(flash());
 app.use(passDataToViews);
 
 

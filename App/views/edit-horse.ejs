@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Horse</title>
+</head>
+<body>
+    <%- include("partials/_navbar") %>
+    <h1>Edit Horse</h1>
+    <form action="/horses/<%= horse._id %>?_method=PUT" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= horse.name %>" required><br>
+
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" name="breed" value="<%= horse.breed %>" required><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="<%= horse.age %>" required><br>
+
+        <label for="image">Image URL:</label>
+        <input type="text" id="image" name="image" value="<%= horse.image %>"><br>
+
+        <button type="submit">Update Horse</button>
+    </form>
+    <a href="/horses/<%= horse._id %>">Back to Horse Profile</a>
+    
+</body>
+</html>
