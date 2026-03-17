@@ -3,7 +3,7 @@ require("./db/connection");
 
 const express = require("express")
 const app = express();
-const PORT = process.env.IS_PROD ? process.env.PORT : 3000;
+const PORT =  process.env.PORT || 3000;
 const morgan = require("morgan");
 const authRoutes = require("./routes/authRoutes");
 const horseRoutes = require("./routes/horseRoutes");
