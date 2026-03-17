@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <%- include("partials/_navbar") %>
     <h1>Welcome to The Stallion Barn!</h1>
     <p>Discover our magnificent horses and find your perfect match.</p>
-
-    
+    <form action=" /users/sign-in" method="GET" style="display: inline;">
+     <button type="submit">Sign In</button>
+    </form>
 </body>
 </html>

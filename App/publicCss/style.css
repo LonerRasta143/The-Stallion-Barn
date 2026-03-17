@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aquamarine;
+    color: #1c1e21;
+    line-height: 1.5;
+    padding: 40px 20px;
+    
+}
+button,.button,a[id$="butt"] {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.container{
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+h1,h2,h3 {
+    color: hsl(0, 81%, 45%);
+    margin-bottom: 20px;
+}
+nav {
+    background: #2c3e50;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    spacing: 50px;
+}
+
+nav a {
+    color: white;
+    margin-right: 100px;
+}

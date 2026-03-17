@@ -1,7 +1,7 @@
 const authRequired = (req, res, next) => {
     if (!req.session.userId) {
         req.flash("error", "You must be logged in to access this page.");
-        return res.redirect("/sign-in");
+        return res.redirect("/users/sign-in");
     }else {
         next();
     }

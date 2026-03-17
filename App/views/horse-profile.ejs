@@ -4,20 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horse Profile</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
         <%- include("partials/_navbar") %>
     <h1><%= horse.name %></h1>
     <p>Breed: <%= horse.breed %></p>
     <p>Age: <%= horse.age %></p>
+    <p>Owner: <strong><%= horse.owner %></strong></p>
+    <p><strong>Most Recent Activity:</strong> <%= horse.activity %></p>
+    <p><em> Updated: <%= moment(horse.updatedAt).format("MMMM Do YYYY, h:mm:ss a") %></em></p>
     <% if (horse.image) { %>
         <img src="<%= horse.image %>" alt="<%= horse.name %>">
     <% } %>
     <br>
+    <a id="activitybutt" href="/horses/<%= horse._id %>/update-horse-activity">Update Activity</a>
     <br>
     <a id="horsebutt" href="/horses">Back to Horse List</a>
     <br>
     <br>
     <a id="editbutt" href="/horses/<%= horse._id %>/edit">Edit Horse</a>
+
+    <h3>Activity History:</h3>
+    <ul>
+        <% if (horse.activityHistory && horse.activityHistory.length > 0) { %>
+            <% horse.activityHistory.forEach(entry => { %>
+                <li><strong><%= entry.activity %></strong> - <em><%= moment(entry.date).format("MMMM Do YYYY, h:mm:ss a") %></em></li>
+            <% }) %>
+        <% } else { %>
+            <li>No activity history available.</li>
+        <% } %>
+    </ul>
 </body>
 </html>

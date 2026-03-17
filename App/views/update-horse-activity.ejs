@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Horse Activity</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include("partials/_navbar") %>
+    <h1>Update Horse Activity</h1>
+    <form action="/horses/<%= horse.id %>/update-horse-activity" method="POST">
+        <label for="activity">Activity:</label>
+        <input type="text" id="activity" name="activity" value="<%= horse.activity %>" required>
+        <input type="hidden" name="updatedAt" value="<%= new Date().toISOString() %>">
+        <button type="submit">Update Activity</button>
+    </form>
+    
+</body>
+</html>
