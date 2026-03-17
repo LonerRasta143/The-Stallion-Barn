@@ -15,7 +15,7 @@
     <p><strong>Most Recent Activity:</strong> <%= horse.activity %></p>
     <p><em> Updated: <%= moment(horse.updatedAt).format("MMMM Do YYYY, h:mm:ss a") %></em></p>
     <% if (horse.image) { %>
-        <img src="<%= horse.image %>" alt="<%= horse.name %>">
+        <img src="<%= horse.image %>" alt="<%= horse.name %>" id="horse-photo">
     <% } %>
     <br>
     <a id="activitybutt" href="/horses/<%= horse._id %>/update-horse-activity">Update Activity</a>
@@ -24,6 +24,11 @@
     <br>
     <br>
     <a id="editbutt" href="/horses/<%= horse._id %>/edit">Edit Horse</a>
+   <form action="/horses/<%= horse._id %>?_method=DELETE" method="POST" style="display: inline;">
+        <button type="submit" id="deletebutt" class="btn-danger" onclick=" return confirm ('Are you sure bout that?')">
+            Delete Horse
+            </button>
+   </form>
 
     <h3>Activity History:</h3>
     <ul>

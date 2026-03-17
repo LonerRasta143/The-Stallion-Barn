@@ -40,8 +40,10 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         "default-src": ["'self'"],
-        "img-src": ["'self'", "https://*.imgur.com", "https://i.imgur.com", "https://*.fbcdn.net", "https://*.facebook.com", "data:"],
+        "img-src": ["'self'", "https://*.imgur.com", "https://i.imgur.com", "https://*.fbcdn.net", "https://*.facebook.com", "data:"], //image allowance
         "script-src": ["'self'", "'unsafe-inline'"],
+        "style-src": ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"], //allows google font
+        "font-src": ["'self'", "https://fonts.gstatic.com"],
       },
     },
   })

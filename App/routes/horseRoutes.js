@@ -100,4 +100,17 @@ router.post("/:id/update-horse-activity", isUserAuth, async (req, res) => {
         res.status(500).send("Server Error");
     }
 });
+
+//delte horse
+router.delete("/:id", isUserAuth, async (req, res) =>{
+    try{
+        await Horse.findByIdAndDelete(req.params.id);
+        req.flash("Sucess", "Horse successfully deleted")
+        res.redirect("/horses")
+    }catch (err){
+        console.log(err)
+        req.flash("error", "Fiailed to delete Horse");
+        res.redirect("/horses")
+    }
+})
 module.exports = router;
