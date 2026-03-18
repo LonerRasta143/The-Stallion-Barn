@@ -1,6 +1,6 @@
 # 🐎 The Stallion Barn
 
-![Image of horses in barn](/App/publicCss/images/homepage.JPG)
+![Image of horses in barn](./publicCss/images/homepage.JPG)
 
 Welcome to **The Stallion Barn**, a centralized management platform designed for horse owners and animal enthusiasts. Whether you're managing a single pony or a full stable, this app helps you stay organized and attentive to your animals' needs.
 
