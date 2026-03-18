@@ -2,6 +2,8 @@
 
 ![Image of horses in barn](./publicCss/images/homepage.JPG)
 
+Link: https://the-stallion-barn-572acc5d0510.herokuapp.com/
+
 Welcome to **The Stallion Barn**, a centralized management platform designed for horse owners and animal enthusiasts. Whether you're managing a single pony or a full stable, this app helps you stay organized and attentive to your animals' needs.
 
 **The Stallion Barn** allows you to create profiles for yourself and your animals, providing a streamlined way to track daily activities, health updates, and routines based on your personal input.
